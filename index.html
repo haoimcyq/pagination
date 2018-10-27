@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pagination</title>
+    <link rel="stylesheet" href="css/pagination.css" />
+</head>
+<body>
+    <button id="search">查询</button>
+    <ol id="list"></ol>
+    <div class="pagination"></div>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/pagination.js"></script>
+    <script>
+        $(function() {
+
+            var pagination = $('.pagination').Pagination({
+                total: 5,
+                current: 1,
+                callback: function(page) {
+                    ajaxData('data/goods_'+ page +'.json');
+                }
+            });
+
+            // 请求数据的方法
+            function ajaxData(url) {
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: {},
+                    dataType: 'json',
+                    timeout: 300,
+                    success: function (data) {
+                        if (data.status != 0) return;
+
+                        var html = '';
+                        $.each(data.data, function(index, value) {
+                            html += '<li>'+ value.title +'</li>'
+                        });
+
+                        $('#list').html(html);
+
+                        // 分页
+                        pagination.total = data.pageNum;
+                        pagination.current = data.pageNo;
+                        pagination.update();
+                    }
+                });
+            }
+
+            ajaxData('data/goods_1.json');
+
+            $('#search').click(function() {
+                ajaxData('data/goods_1.json');
+            })
+        })
+    </script>
+</body>
+</html>

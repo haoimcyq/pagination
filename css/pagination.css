@@ -1,0 +1,52 @@
+a {
+  text-decoration: none; }
+
+.pagination {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .pagination span, .pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 16px;
+    margin: 0 6px; }
+  .pagination .ellipsis {
+    padding: 0;
+    margin: 0; }
+  .pagination a:hover {
+    color: #4e9bf5;
+    border-color: #4e9bf5; }
+  .pagination span.disabled {
+    background: #dddddd;
+    cursor: not-allowed; }
+  .pagination .active {
+    color: #fff;
+    background: #4e9bf5; }
+  .pagination .num {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .pagination .prev, .pagination .next {
+    color: #999999;
+    background: #FFFFFF;
+    border: 1px solid #dddddd; }
+  .pagination .input {
+    width: 50px;
+    height: 34px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    margin: 0 8px; }
+    .pagination .input:focus {
+      border-color: #4e9bf5; }
+  .pagination .tools {
+    padding: 8px 0; }
+  .pagination .ok {
+    border: 1px solid #dddddd;
+    margin: 0;
+    cursor: pointer; }
+    .pagination .ok:hover {
+      color: #4e9bf5;
+      border-color: #4e9bf5; }
+
+/*# sourceMappingURL=pagination.css.map */

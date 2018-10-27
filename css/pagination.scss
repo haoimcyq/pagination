@@ -1,0 +1,94 @@
+$primary: #4e9bf5;
+$success: #6bd75d;
+$danger: #fc3737;
+$gray: #dddddd;
+
+$font-12: 12px;
+$font-14: 14px;
+$font-16: 16px;
+$font-18: 18px;
+$font-24: 24px;
+$font-30: 30px;
+$font-32: 32px;
+$font-36: 36px;
+
+@mixin noselect() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pagination {
+    display: inline-block;
+    @include noselect();
+
+    span, a{
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: $font-16;
+        margin: 0 6px;
+    }
+
+    .ellipsis {
+        padding: 0;
+        margin: 0;
+    }
+
+    a:hover {
+        color: $primary;
+        border-color: $primary;
+    }
+
+    span.disabled {
+        background: $gray;
+        cursor: not-allowed;
+    }
+
+    .active {
+        color: #fff;
+        background: $primary;
+    }
+
+    .num {
+        color: #999999;
+        border: 1px solid $gray;
+    }
+
+    .prev, .next{
+        color: #999999;
+        background: #FFFFFF;
+        border: 1px solid $gray;
+    }
+
+    .input {
+        width: 50px;
+        height: 34px;
+        text-align: center;
+        border: 1px solid $gray;
+        margin: 0 8px;
+
+        &:focus {
+            border-color: $primary;
+        }
+    }
+
+    .tools {
+        padding: 8px 0;
+    }
+
+    .ok {
+        border: 1px solid $gray;
+        margin: 0;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+}
